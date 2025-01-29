@@ -1,8 +1,9 @@
 # React e-commerce website
-## features
+### features
 
 
 
-# Tech stark
+### Tech stark
 1.React
+
 2.css
