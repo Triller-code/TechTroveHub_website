@@ -1,0 +1,281 @@
+/* 🌟 General Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* 🌟 Dashboard Navigation */
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(51, 51, 51, 0.9);  /* Glass effect */
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+/* 🌟 Dropdown Menu Styling */
+.dropdown {
+  position: absolute;
+  top: 40px; /* Adjust distance from the button */
+  left: 0;
+  background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+  color: #333;
+  list-style: none;
+  padding: 10px 0;
+  width: 180px; /* Fixed width for uniformity */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* 🌟 Show dropdown when toggled */
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+
+/* 🌟 Dropdown List Items */
+.dropdown li {
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle separator */
+}
+
+/* Remove border from last item */
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+/* 🌟 Hover Effect */
+.dropdown li:hover {
+  background: #ffcc00; /* Change to theme color */
+  color: #333;
+  transform: translateX(5px); /* Subtle movement */
+}
+
+/* 🌟 Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+button {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(255, 126, 95, 0.3);
+}
+
+/* 🌟 Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: 50px; /* Adjust to position below the button */
+  left: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 12px;
+  display: none; /* Hide by default */
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* 🌟 Carousel Styling */
+.carousel {
+  width: 100%;
+  background-color: transparent;
+  max-width: 1200px;
+  margin: 50px auto;
+  overflow: hidden;
+ 
+}
+
+.carousel img {
+  width: 100%; /* Ensures it fills the container */
+  height: auto; /* Maintains aspect ratio */
+  max-height: 400px; /* Prevents excessive stretching */
+  object-fit: contain; /* Ensures the full image is visible */
+  object-position: center;
+  transition: transform 0.4s ease-in-out;
+  animation: scrollImages 3s linear infinite; /* Add scrolling animation */
+}
+.carousel img:hover {
+  transform: scale(1.02);
+}
+/* Animation for Scrolling */
+@keyframes scrollImages {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll to the left */
+  }
+}
+/* 🌟 Product Section */
+.products {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin:30px;
+}
+
+.product {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  width: 180px;
+  margin: 20px;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* 🌟 Footer Styling */
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-content a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-media a {
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+  color: #1e90ff; /* Change color on hover */
+}
+
+.related-products {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.about-us {
+  max-width: 1000px;  /* Keeps content centered and readable */
+  margin: 50px auto; /* Centers the section on the page */
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #f9f9f9, #ececec); /* Soft gradient background */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.about-us:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.about-us h2 {
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-us p {
+  font-size: 18px;
+  color: #1a1717;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
