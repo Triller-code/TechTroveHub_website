@@ -1,0 +1,84 @@
+/* General Styles to Cover Full Page */
+html, body {
+
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Spread items out */
+  align-items: center;
+  padding: 5px 20px; /* Smaller padding */
+  background-color: palevioletred;
+  position: fixed; /* Fix navbar to the top */
+  top: 0; /* Fixed to the top */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  width: 100%;
+  height: 50px; /* Smaller height for the navbar */
+}
+
+/* Logo Styling */
+.logo {
+  height: 50px;
+  width: 50px; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo image is contained without distortion */
+}
+
+
+/* Navbar Menu - Centered */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Allow menu to take available space */
+  justify-content: center; /* Center the menu items */
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px; /* Smaller font size */
+}
+
+.navbar-menu li a:hover {
+  color: #007bff;
+}
+
+/* Navbar Right - Sign In Button */
+.navbar-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.navbar-right .sign-in-btn {
+  padding: 5px 12px; /* Smaller padding */
+  font-size: 14px; /* Smaller font size */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-right .sign-in-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+

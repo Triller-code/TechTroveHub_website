@@ -1,0 +1,41 @@
+/* Footer Styles */
+.footer {
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    display: flex; /* Use flexbox to align the items */
+    justify-content: space-between; /* Distribute content across left, center, and right */
+    align-items: center; /* Vertically center the content */
+    padding: 10px 20px; /* Reduced padding for a smaller footer height */
+    position: fixed; /* Fix the footer at the bottom of the page */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width to cover the bottom */
+    z-index: 1000; /* Ensure the footer stays on top of other elements */
+}
+
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    align-items: center; /* Vertically center content in each section */
+}
+
+.footer-left {
+    justify-content: flex-start; /* Left-aligned content */
+}
+
+.footer-center {
+    justify-content: center; /* Center-aligned content */
+}
+
+.footer-right {
+    justify-content: flex-end; /* Right-aligned content */
+}
+
+/* Optional Styling for the Text */
+.footer p {
+    margin: 0;
+    font-size: 14px; /* Smaller font size */
+}
+
+.footer strong {
+    font-weight: bold;
+}

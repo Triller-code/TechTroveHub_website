@@ -1,0 +1,41 @@
+/* 🌟 Carousel Styling */
+.carousel {
+  width: 100%;
+  background-color: transparent;
+  max-width: 1200px; /* Maximum width of the carousel */
+  margin: 50px auto; /* Center the carousel horizontally */
+  overflow: hidden;
+  display: flex; /* Ensure items are aligned in a row */
+  justify-content: center; /* Center the images horizontally */
+  align-items: center; /* Center images vertically */
+  height: 250px; /* Set carousel height */
+  position:fixed
+}
+
+.carousel-images {
+  display: flex; /* Arrange images in a row */
+  width: 100%; /* Ensure the images container takes full width */
+}
+
+.carousel img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 250px; /* Limit height to match carousel height */
+  object-fit: contain; /* Maintain aspect ratio while fitting within the space */
+  object-position: center; /* Center the images inside the container */
+  transition: transform 0.4s ease-in-out;
+  animation: scrollImages 6s linear infinite; /* Add scrolling animation */
+}
+
+.carousel img:hover {
+  transform: scale(1.02);
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll to the left */
+  }
+}
