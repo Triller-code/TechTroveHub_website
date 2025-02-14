@@ -1,19 +1,42 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import CardCarousel from './CardCarousel.jsx'
+import CardCarousel from './components/CardCarousel.jsx'
+import Card from './components/Cards.jsx'
+import Navbar from './components/Dashboard.jsx'
+import ProductGrid from './components/CardCarousel.jsx'
+import Testimonials from "./components/Testimonials.jsx";
+import AboutUs from "./components/AboutUs.jsx";
+import Home from './components/Home.jsx'
+import Footer from  './components/Footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      
-    <CardCarousel/>
+      <Navbar />
+      <main>
+   
+       
+       
+       
+      </main>
+      <Home/>
+      <ProductGrid />
+    
+      <Testimonials />
+      <AboutUs />
+      <Footer/>
 
-    </>
+    </> 
   )
 }
 
 export default App
+
+
+
+
+
+
+
