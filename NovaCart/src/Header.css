@@ -1,0 +1,55 @@
+.header {
+  background-color: #312828;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 46px;
+  color: #f7f0f0;
+  font-family: 'Dancing Script', cursive;
+
+}
+
+.header nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.header nav a {
+  color: #ee5eca;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.header nav button {
+  background-color: #e60898;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header nav button:hover {
+  background-color: #c55feb;
+}
+
+@media (max-width: 768px) {
+  .header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header nav button {
+    width: 100%;
+  }
+}

@@ -1,124 +1,49 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import background1 from './assets/football1.jpg';
-import background2 from './assets/football2.jpg';
-import background3 from './assets/football1.jpg';
-import background4 from './assets/football2.jpg';
-import background5 from './assets/football1.jpg';
+import React, { useEffect, useState } from 'react';
+import './MyproductsCarousel.css';
 
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        background: "blue",
-        borderRadius: "50%",
-        zIndex: 1, 
-      }}
-      onClick={onClick}
-    />
-  );
-};
+const featuredProducts = [
+  { id: 1, name: 'Pink Roses', image: 'https://i.pinimg.com/736x/5a/76/b6/5a76b64ab0ee78f5b57ff60d998ed792.jpg', price: 'Kshs. 4500' },
+  { id: 2, name: 'Lilies', image: 'https://i.pinimg.com/474x/26/80/50/2680502c17e3ea2e4817ae23621b1447.jpg', price: 'Kshs. 4300' },
+  { id: 3, name: 'Peonies', image: 'https://i.pinimg.com/474x/f4/b7/d4/f4b7d4344b48ae58d78017372ffcfc51.jpg', price: 'Kshs. 3600' },
+  { id: 4, name: 'Sunflowers', image: 'https://i.pinimg.com/474x/cf/93/ce/cf93ced9c8bebb0baa247564698518a5.jpg', price: 'Kshs. 5100' },
+  { id: 5, name: 'Carnations', image: 'https://i.pinimg.com/736x/cd/10/22/cd1022d3771c517746347774d4dbd8ea.jpg', price: 'Kshs. 3900' },
+];
 
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        background: "blue",
-        borderRadius: "50%",
-        zIndex: 1, 
-      }}
-      onClick={onClick}
-    />
-  );
-};
+function CardCarousel() {
+  const [index, setIndex] = useState(0);
 
-const CardCarousel = () => {
-  const settings = {
-    dots: true, 
-    infinite: false,
-    speed: 500, 
-    slidesToShow: 1, 
-    slidesToScroll: 1,
-    arrows: true, 
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+  const handleNext = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % featuredProducts.length);
   };
 
-  
-  const cards = [
-    {
-      title: "Unity",
-      description: "Football brings people together.",
-      background: background1, 
-    },
-    {
-      title: "Team Spirit",
-      description: "Camaraderie in every match.",
-      background: background2,
-    },
-    {
-      title: "Inclusivity",
-      description: "Breaking barriers with football.  A library for writing CSS directly within your JavaScript files in a React project. It allows you to create styled components by using ES6 template literals, which makes your styles more modular and scoped to specific components.  ",
-      background: background3,
-    },
-    {
-      title: "Beyond the Game",
-      description: "Inspiring social change.",
-      background: background4,
-    },
-    {
-      title: "Field of Dreams",
-      description: "Greatness starts here.",
-      background: background5,
-    },
-  ];
+  const handlePrev = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? featuredProducts.length - 1 : prevIndex - 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [index]); // Updated dependency array
 
   return (
-    <div style={{ width: '100vw', height: '600px', overflow: 'hidden' }}>
-      <Slider {...settings}>
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            style={{
-              width: '100vw',
-              height: '600px',
-              background: `url(${card.background})`, 
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white', 
-            }}
-          >
-            <div style={{ textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '20px', borderRadius: '10px' }}>
-                    <h3 style={{ fontSize: '2rem', fontWeight: 'bold' }}>{card.title}</h3>
-                    <img src='background5' style={{height:'335px' ,width:'1330px'}}></img>
-              <p style={{ fontSize: '1.5rem' }}>{card.description}</p>
-            </div>
-          </div>
-        ))}
-      </Slider>
+    <div className="carousel" aria-label="Featured Products Carousel" role="region">
+      <button onClick={handlePrev} aria-label="Previous Product">
+        &lt;
+      </button>
+      <div className="carousel-item">
+        <img src={featuredProducts[index].image} alt={featuredProducts[index].name} />
+        <h3>{featuredProducts[index].name}</h3>
+        <p>{featuredProducts[index].price}</p>
+      </div>
+      <button onClick={handleNext} aria-label="Next Product">
+        &gt;
+      </button>
     </div>
   );
-};
+}
 
 export default CardCarousel;
-
-
-
-
-
-
-
