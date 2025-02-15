@@ -2,11 +2,11 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import background1 from './assets/football1.jpg';
-import background2 from './assets/football2.jpg';
-import background3 from './assets/football1.jpg';
-import background4 from './assets/football2.jpg';
-import background5 from './assets/football1.jpg';
+import background1 from './assets/Techproduct1.jpg';
+import background2 from './assets/techproduct4.jpg';
+import background3 from './assets/Techproduct5.jpg';
+import background4 from './assets/Techproduct6.jpg';
+import background5 from './assets/techproduct7.jpg';
 
 const NextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -34,7 +34,6 @@ const PrevArrow = (props) => {
         ...style,
         display: "block",
         background: "blue",
-        borderRadius: "50%",
         zIndex: 1, 
       }}
       onClick={onClick}
@@ -44,47 +43,49 @@ const PrevArrow = (props) => {
 
 const CardCarousel = () => {
   const settings = {
-    dots: true, 
-    infinite: false,
-    speed: 500, 
+    dots: false, 
+    infinite: true, 
+    speed: 1000, 
     slidesToShow: 1, 
     slidesToScroll: 1,
-    arrows: true, 
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    arrows: false, 
+    autoplay: true, 
+    autoplaySpeed: 5000,
+    pauseOnHover: false,  
+    pauseOnFocus: false,   
   };
-
   
+
   const cards = [
     {
-      title: "Unity",
-      description: "Football brings people together.",
+      title: "Featured Products",
+      description: "See What's New.",
       background: background1, 
     },
     {
-      title: "Team Spirit",
-      description: "Camaraderie in every match.",
+      title: "Favourites",
+      description: "What Our Customers Love.",
       background: background2,
     },
     {
-      title: "Inclusivity",
-      description: "Breaking barriers with football.  A library for writing CSS directly within your JavaScript files in a React project. It allows you to create styled components by using ES6 template literals, which makes your styles more modular and scoped to specific components.  ",
+      title: "Offers",
+      description: "Check Out These Great Deals.",
       background: background3,
     },
     {
-      title: "Beyond the Game",
-      description: "Inspiring social change.",
+      title: "Discover",
+      description: "Have you seen these new products?",
       background: background4,
     },
     {
-      title: "Field of Dreams",
-      description: "Greatness starts here.",
+      title: "Picked For You",
+      description: "Based on your recent activity.",
       background: background5,
     },
   ];
 
   return (
-    <div style={{ width: '100vw', height: '600px', overflow: 'hidden' }}>
+    <div style={{ width: '100vw', height: '460px', overflow: 'hidden' }}>
       <Slider {...settings}>
         {cards.map((card, index) => (
           <div
@@ -92,7 +93,7 @@ const CardCarousel = () => {
             style={{
               width: '100vw',
               height: '600px',
-              background: `url(${card.background})`, 
+              backgroundImage: `url(${card.background})`, 
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -102,9 +103,9 @@ const CardCarousel = () => {
               color: 'white', 
             }}
           >
-            <div style={{ textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '20px', borderRadius: '10px' }}>
-                    <h3 style={{ fontSize: '2rem', fontWeight: 'bold' }}>{card.title}</h3>
-                    <img src='background5' style={{height:'335px' ,width:'1330px'}}></img>
+            <div style={{ textAlign: 'center', backgroundColor: 'rgba(84, 95, 120, 0.5)',padding: '30px', borderRadius: '1px' }}>
+              <h3 style={{ fontSize: '2rem', fontWeight: 'bold' }}>{card.title}</h3>
+              <img src={card.background} style={{ height: '335px', width: '1330px' }} alt={card.title} />
               <p style={{ fontSize: '1.5rem' }}>{card.description}</p>
             </div>
           </div>
@@ -115,6 +116,7 @@ const CardCarousel = () => {
 };
 
 export default CardCarousel;
+
 
 
 
