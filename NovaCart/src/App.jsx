@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './Dashboard.jsx';
 import HomePage from './HomePage.jsx';
 import SignInPage from './SignInPage.jsx';
 import CardCarousel from './CardCarousel.jsx';
@@ -12,10 +11,9 @@ import Footer from './Footer.jsx';
 function MainContent() {
   return (
     <>
-      <Dashboard />
       <HomePage />
       <CardCarousel />
-      <Products />
+      <Products/>
       <Related />
       <AboutUs />
       <Footer />

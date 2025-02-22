@@ -7,7 +7,7 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'flex-start',
         padding: '20px',
-        backgroundColor: '#333',
+        backgroundColor: '#063970',
         color: '#fff',
         fontFamily: 'Arial, sans-serif',
         flexWrap: 'wrap',
