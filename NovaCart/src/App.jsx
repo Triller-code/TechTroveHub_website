@@ -1,16 +1,14 @@
-import { useState } from 'react'
-import './App.css'
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './Dashboard';
-import HomePage from './HomePage';
-import SignInPage from './SignInPage';
-import CardCarousel from './CardCarousel';
-import Products from './Products';
-import Related from './Related';
-import AboutUs from './AboutUs';
-import Footer from './Footer';
+import Dashboard from './Dashboard.jsx';
+import HomePage from './HomePage.jsx';
+import SignInPage from './SignInPage.jsx';
+import CardCarousel from './CardCarousel.jsx';
+import Products from './Products.jsx';
+import Related from './Related.jsx';
+import AboutUs from './AboutUs.jsx';
+import Footer from './Footer.jsx';
 
 function App() {
   return (
@@ -26,6 +24,7 @@ function App() {
         <Route path="/contact" element={<Footer />} />
       </Routes>
     </Router>
+
   );
 }
 
