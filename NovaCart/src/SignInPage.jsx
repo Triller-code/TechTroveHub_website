@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const SignInPage = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -11,8 +12,15 @@ const SignInPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('User signed in with:', credentials);
-    navigate('/dashboard'); // Redirect to dashboard upon successful login
+    setError('');
+
+    // Trim whitespace before checking credentials
+    if (credentials.email.trim() && credentials.password.trim()) {
+      console.log('User signed in with:', credentials);
+      navigate('/Products.jsx', { replace: true }); // ✅ Correct navigation
+    } else {
+      setError('Invalid credentials, please try again.');
+    }
   };
 
   return (
@@ -38,6 +46,7 @@ const SignInPage = () => {
           style={styles.input}
         />
         <button type="submit" style={styles.submitButton}>Sign In</button>
+        {error && <p style={styles.error}>{error}</p>}
       </form>
       <p>Don't have an account? <span style={styles.link} onClick={() => navigate('/signup')}>Sign Up</span></p>
     </div>
@@ -80,6 +89,11 @@ const styles = {
   link: {
     color: '#ff5722',
     cursor: 'pointer',
+  },
+  error: {
+    color: 'red',
+    marginTop: '10px',
+    textAlign: 'center',
   },
 };
 

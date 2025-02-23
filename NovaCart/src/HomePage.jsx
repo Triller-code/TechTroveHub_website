@@ -20,12 +20,6 @@ const HomePage = () => {
       case 'Stories':
         navigate('/CardCarousel.jsx');
         break;
-      case 'Products':
-        navigate('/Products.jsx');
-        break;
-      case 'Related':
-        navigate('/Related.jsx');
-        break;
       case 'About':
         navigate('/AboutUs.jsx');
         break;
@@ -54,8 +48,6 @@ const HomePage = () => {
         <div onClick={() => handleOptionClick('Home')} style={styles.sidebarItem}>Home</div>
         <div onClick={() => handleOptionClick('Sign In')} style={styles.sidebarItem}>Sign In</div>
         <div onClick={() => handleOptionClick('Stories')} style={styles.sidebarItem}>Stories</div>
-        <div onClick={() => handleOptionClick('Products')} style={styles.sidebarItem}>Products</div>
-        <div onClick={() => handleOptionClick('Related')} style={styles.sidebarItem}>Related</div>
         <div onClick={() => handleOptionClick('About')} style={styles.sidebarItem}>About Us</div>
         <div onClick={() => handleOptionClick('Footer')} style={styles.sidebarItem}>Get in Touch</div>
       </div>
@@ -153,13 +145,12 @@ const styles = {
     top: 0,
     left: 0,
     width: '100%',
-    height: '100%',
+    height: '9%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     zIndex: 999,
   },
   hero: {
-    padding: '100px 20px',
-    background: 'url("https://source.unsplash.com/1600x900/?bicycle") center/cover no-repeat',
+    padding: '2px 2px',
     color: '#fff',
   },
   featured: {

@@ -104,7 +104,7 @@ const CardCarousel = () => {
             <div
               style={{
                 textAlign: "center",
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                backgroundColor: "#063970",
                 padding: "20px",
                 borderRadius: "10px",
               }}
